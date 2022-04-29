@@ -1,54 +1,43 @@
-public class PedidoBuilder  extends PedidoAbstractBuilder{
-
-
+public class PedidoBuilder extends PedidoAbstractBuilder{
     private Pedido pedido = new Pedido();
 
     @Override
     public void setLanche(TipoLanche tipo) {
+        ItemPedido itemPedido = new ItemPedido();
+        itemPedido.setTipo(TipoItemPedido.LANCHE);
+        itemPedido.setNome(tipo.name());
 
-        ItemPedido item = new ItemPedido();
-        item.setNome(tipo.name());
-        item.setTipo(TipoItemPedido.LANCHE);
-
-        pedido.adicionarItemDentroCaixa(item);
+        pedido.adicionarItemDentroCaixa(itemPedido);
     }
 
     @Override
     public void setBatata(TamanhoBatata tamanho) {
+        ItemPedido itemPedido = new ItemPedido();
+        itemPedido.setTipo(TipoItemPedido.BATATA);
+        itemPedido.setNome(tamanho.name());
 
-        ItemPedido item = new ItemPedido ();
-        item.setNome(tamanho.name());
-        item.setTipo(TipoItemPedido.BATATA);
-
-        pedido.adicionarItemDentroCaixa(item);
-
+        pedido.adicionarItemDentroCaixa(itemPedido);
     }
 
     @Override
     public void setBrinde(TipoBrinde tipo) {
+        ItemPedido itemPedido = new ItemPedido();
+        itemPedido.setTipo(TipoItemPedido.BRINDE);
+        itemPedido.setNome(tipo.name());
 
-        ItemPedido item = new ItemPedido ();
-        item.setNome(tipo.name());
-        item.setTipo(TipoItemPedido.BRINDE);
-
-        pedido.adicionarItemDentroCaixa(item);
-
+        pedido.adicionarItemDentroCaixa(itemPedido);
     }
 
     @Override
     public void setBebida(TipoBebida tipo) {
+        ItemPedido itemPedido = new ItemPedido();
+        itemPedido.setTipo(TipoItemPedido.BEBIDA);
+        itemPedido.setNome(tipo.name());
 
-        ItemPedido item = new ItemPedido ();
-        item.setNome(tipo.name());
-        item.setTipo(TipoItemPedido.BEBIDA);
-
-        pedido.adicionarItemDentroCaixa(item);
-
+        pedido.adicionarItemForaCaixa(itemPedido);
     }
 
-    public Pedido build () {
-
+    public Pedido build() {
         return pedido;
-
     }
 }

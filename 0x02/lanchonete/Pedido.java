@@ -2,22 +2,23 @@ import java.util.HashSet;
 
 public class Pedido {
 
-    private HashSet <ItemPedido> itensDentroCaixa = new HashSet<> ();
-    private HashSet <ItemPedido> itensForaCaixa = new HashSet<> ();
+    private HashSet<ItemPedido> itensDentroCaixa = new HashSet<>();
+    private HashSet<ItemPedido> itensForaCaixa = new HashSet<>();
 
-
-
-    public void  adicionarItemDentroCaixa(ItemPedido item) {
-
+    public void adicionarItemDentroCaixa(ItemPedido item) {
         itensDentroCaixa.add(item);
-
-
     }
 
-    public void adicionarItemForaCaixa (ItemPedido item) {
-
+    public void adicionarItemForaCaixa(ItemPedido item) {
         itensForaCaixa.add(item);
+    }
 
+    public HashSet<ItemPedido> getItensDentroCaixa() {
+        return itensDentroCaixa;
+    }
+
+    public HashSet<ItemPedido> getItensForaCaixa() {
+        return itensForaCaixa;
     }
 
     @Override
