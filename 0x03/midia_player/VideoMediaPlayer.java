@@ -2,7 +2,7 @@ public class VideoMediaPlayer implements AdvancedMediaPlayer {
 
 
     @Override
-    public void reproduzirVLC(String nomeArquivo) {
+    public void reproduzirVlc(String nomeArquivo) {
         System.out.print("Reproduzindo VLC: " + nomeArquivo);
 
     }
